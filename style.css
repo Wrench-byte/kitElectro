@@ -1,0 +1,188 @@
+:root {
+    --bg-color: #ffffff;          /* Fondo principal blanco */
+    --bg-alt: #f4f7fa;            /* Fondo secundario gris muy claro */
+    --card-bg: #ffffff;           /* Fondo de las tarjetas blanco */
+    --accent-blue: #0052cc;       /* Azul corporativo/tecnológico */
+    --accent-hover: #0043a8;      /* Azul más oscuro para estados hover */
+    --text-main: #1e293b;         /* Texto principal oscuro para buena lectura */
+    --text-muted: #64748b;        /* Texto secundario/atenuado */
+    --border-color: #e2e8f0;      /* Bordes sutiles */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* Header / Навигация */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(25xff, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-main);
+}
+.logo span { color: var(--accent-blue); }
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+nav a:hover { color: var(--accent-blue); }
+
+.btn-nav {
+    background: var(--accent-blue);
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.btn-nav:hover { background: var(--accent-hover); }
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    /* Degradado claro sobre la imagen de fondo */
+    background: linear-gradient(to right, rgba(255,255,255,0.95), rgba(255,255,255,0.4)), url('https://unsplash.com') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    max-width: 600px;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.hero-content p {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: transform 0.2s, background 0.2s;
+}
+.hero-buttons a:hover { transform: translateY(-2px); }
+
+.btn-primary { background: var(--accent-blue); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); }
+.btn-whatsapp { background: #25D366; color: #fff; }
+.btn-whatsapp:hover { background: #20ba5a; }
+
+/* Каталог автомобилей */
+.catalog {
+    padding: 80px 5%;
+    background-color: var(--bg-alt); /* Fondo gris claro para hacer resaltar las tarjetas blancas */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: var(--text-main);
+}
+
+.grid-cars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.car-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.car-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.car-info { padding: 24px; }
+.car-info h3 { margin-bottom: 10px; color: var(--text-main); font-size: 20px; }
+.specs { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+}
+.price .currency { font-size: 14px; color: var(--text-muted); font-weight: normal; margin-left: 5px; }
+
+.btn-order {
+    width: 100%;
+    background: transparent;
+    border: 2px solid var(--accent-blue);
+    color: var(--accent-blue);
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-order:hover { 
+    background: var(--accent-blue); 
+    color: #fff; 
+}
+
+/* Footer */
+footer { 
+    text-align: center; 
+    padding: 40px; 
+    color: var(--text-muted); 
+    font-size: 14px;
+    background-color: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; text-align: center; }
+    nav a { margin: 0 10px; }
+    .hero-content h1 { font-size: 28px; }
+    .hero-buttons a { display: block; margin-bottom: 10px; text-align: center; margin-right: 0; }
+}

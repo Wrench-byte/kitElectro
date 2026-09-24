@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kitElectro - Электромобили из Китая в Бишкеке</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Навигация -->
+    <header>
+        <div class="logo">kit<span>Electro</span></div>
+        <nav>
+            <a href="#catalog">Каталог</a>
+            <a href="https://wa.me" target="_blank" class="btn-nav">Консультация</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Электромобили из Китая под ключ с kit.electro</h1>
+            <p>Прямые поставки BYD, Zeekr, Li Auto в Кыргызстан. Доставка в Бишкек в кратчайшие сроки с полной гарантией.</p>
+            <div class="hero-buttons">
+                <a href="#catalog" class="btn-primary">Смотреть каталог</a>
+                <a href="https://wa.me" target="_blank" class="btn-whatsapp">WhatsApp отдел продаж</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Каталог авто -->
+    <section id="catalog" class="catalog">
+        <h2>Популярные модели в наличии и под заказ</h2>
+        <div class="grid-cars">
+            
+            <!-- Карточка 1 -->
+            <div class="car-card">
+                <div class="car-img" style="background-image: url('Images/banner1-1-7ee18ca6ca.png');"></div>
+                <div class="car-info">
+                    <h3>BYD Song Plus EV</h3>
+                    <p class="specs">🔋 Запас хода: 520 км | Батарея: 71.7 кВтч</p>
+                    <div class="price">от 2,150,000 <span class="currency">сом</span></div>
+                    <button class="btn-order" onclick="openOrderModal('BYD Song Plus')">Узнать подробнее</button>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="car-card">
+                <div class="car-img" style="background-image: url('Images/images.png');"></div>
+                <div class="car-info">
+                    <h3>Zeekr 001</h3>
+                    <p class="specs">🔋 Запас хода: 741 км | Полный привод</p>
+                    <div class="price">от 3,600,000 <span class="currency">сом</span></div>
+                    <button class="btn-order" onclick="openOrderModal('Zeekr 001')">Узнать подробнее</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 kit.electro. Разработка профессиональных авто-сайтов под ключ в Кыргызстане.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
